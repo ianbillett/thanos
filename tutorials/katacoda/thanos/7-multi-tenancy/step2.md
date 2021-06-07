@@ -99,12 +99,12 @@ Let us now check if our read isolation works.
 
 Firstly, query for `team-fruit` metrics through Caddy port 39091:
 ```
-curl https://[[HOST_SUBDOMAIN]]-39091-[[KATACODA_HOST]].environments.katacoda.com/api/v1/query?query="up"
+curl 127.0.0.1:39091/api/v1/query?query="up"
 ```{{execute}}
 
 Secondly, query for `team-veggie` data through Caddy port 39092:
 ```
-curl https://[[HOST_SUBDOMAIN]]-39092-[[KATACODA_HOST]].environments.katacoda.com/api/v1/query?query="up"
+curl 127.0.0.1:39092/api/v1/query?query="up"
 ```{{execute}}
 
 Feel free to play around, you will see that we can only see Fruit or Veggie data depends where we go!
