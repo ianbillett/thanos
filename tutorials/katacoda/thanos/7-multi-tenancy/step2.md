@@ -95,10 +95,17 @@ At the end we should have setup as on following diagram:
 
 ![diagram](./assets/read-soft-tenancy.png)
 
-Let's check if our read isolation works:
+Let us now check if our read isolation works.
 
-* [Query for Fruit Team through Caddy 39091 port](https://[[HOST_SUBDOMAIN]]-39091-[[KATACODA_HOST]].environments.katacoda.com/)
-* [Query for Veggie Team through Caddy 39092 port](https://[[HOST_SUBDOMAIN]]-39092-[[KATACODA_HOST]].environments.katacoda.com/)
+Firstly, query for `team-fruit` metrics through Caddy port 39091:
+```
+curl https://[[HOST_SUBDOMAIN]]-39091-[[KATACODA_HOST]].environments.katacoda.com/api/v1/query?query="up"
+```{{execute}}
+
+Secondly, query for `team-veggie` data through Caddy port 39092:
+```
+curl https://[[HOST_SUBDOMAIN]]-39092-[[KATACODA_HOST]].environments.katacoda.com/api/v1/query?query="up"
+```{{execute}}
 
 Feel free to play around, you will see that we can only see Fruit or Veggie data depends where we go!
 
