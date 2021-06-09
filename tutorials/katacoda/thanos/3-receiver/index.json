@@ -1,27 +1,18 @@
 {
-  "title": "Intro: Downsampling and unlimited metric retention for Prometheus",
-  "description": "Learn how to extend your metric retention in a cheap and easy way with Thanos.",
+  "title": "Intermediate: Ingesting metrics data from unreachable sources with Thanos Receive",
+  "description": "Learn how to ingest and query metrics data from unreachable sources with Thanos Receive.",
   "difficulty": "Moderate",
   "details": {
     "steps": [
       {
-        "title": "Configuring Initial Prometheus Server",
+        "title": "Problem Statement & Setup",
         "text": "step1.md",
         "verify": "step1-verify.sh"
       },
       {
-        "title": "Thanos Sidecars",
+        "title": "Simple Global View Architecture with Thanos Receive",
         "text": "step2.md",
         "verify": "step2-verify.sh"
-      },
-      {
-        "title": "Thanos Store Gateway",
-        "text": "step3.md",
-        "answer": "step3-answer.md"
-      },
-      {
-        "title": "Thanos Compactor",
-        "text": "step4.md"
       }
     ],
     "intro": {
@@ -35,8 +26,8 @@
     }
   },
   "files": [
-    "prometheus0_eu1.yml",
-    "bucket_storage.yaml"
+    "prometheus-batcave.yaml",
+    "prometheus-batcomputer.yaml"
   ],
   "environment": {
     "uilayout": "editor-terminal",
@@ -44,9 +35,9 @@
     "uieditorpath": "/root/editor",
     "showdashboard": true,
     "dashboards": [
-      {"name": "Prometheus 0 EU1", "port": 9090},
-      {"name": "Minio", "port": 9000},
-      {"name": "Thanos Query", "port": 9091}
+      {"name": "Prometheus Batcave", "port": 9090},
+      {"name": "Prometheus Batcomputer", "port": 9000},
+      {"name": "Thanos Query", "port": 39090}
   ]
   },
   "backend": {

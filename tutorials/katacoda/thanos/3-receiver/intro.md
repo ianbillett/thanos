@@ -1,24 +1,22 @@
-# Intro: Downsampling and unlimited metric retention for Prometheus
+# Intermediate: Ingesting metrics data from unreachable sources with Thanos Receive
 
-They say that [Thanos](thanos.io) is a set of components that can be composed into a highly available metric system with **unlimited storage capacity**
-and that it can be added **seamlessly** on top of existing Prometheus deployments. 🤔🤔
+The [Thanos](thanos.io) project defines a set of components that can be composed together into a highly available metric system with **unlimited storage capacity** that **seamlessly** integrates into your existing Prometheus deployments.
 
-In this course you can experience all of this yourself.
+In this course you get first-hand experience building and deploying this infrastructure yourself.
 
-In this tutorial, you will learn about:
+In this tutorial, you will learn:
 
-* How to start uploading your Prometheus data seamlessly to cheap object storage thanks to Thanos sidecar.
-* How to further query your data in object storage thanks to Thanos Store Gateway.
-* How to query both fresh and older data in easy way through Thanos Querier.
+* How to ingest metrics data from Prometheus instances that are unreachable from your infrastructure.
+* How to setup a Thanos Querier to access this data.
+* How Thanos Receive is different from Thanos Sidecar, and when is the right time to use each of them.
 
-All of this allows you to keep your metrics in cheap and reliable object storage, allowing virtually unlimited metric retention for Prometheus.
+This will allow you to setup infrastucture 
 
 > NOTE: This course uses docker containers with pre-built Thanos, Prometheus, and Minio Docker images available publicly.
-> However, a similar scenario will work with any other deployment method like Kubernetes or systemd, etc.
 
 ### Prerequisites
 
-Please complete first intro course about GlobalView before jumping into this one! 🤗
+Please complete tutorial #1 first: [Global View and seamless HA for Prometheus](https://www.katacoda.com/thanos/courses/thanos/1-globalview) 🤗
 
 ### Feedback
 
@@ -27,4 +25,4 @@ Let us know on https://github.com/thanos-io/thanos or #thanos slack channel link
 
 ### Contributed by:
 
-* Sonia Singla [@soniasingla](http://github.com/soniasingla)
+* Ian Billett [@ianbillett](http://github.com/ianbillett)
