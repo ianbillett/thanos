@@ -19,6 +19,11 @@
       "description": "Learn how to ingest and query metrics data from unreachable sources with Thanos Receive."
     },
     {
+      "course_id": "4-receiver-advanced",
+      "title": "Advanced: Scaling Data Ingest & High Availability in Thanos Receive",
+      "description": "Learn how to architect Thanos Receive to achieve increasing data ingest volumes and high-availabilty."
+    },
+    {
       "course_id": "6-query-caching",
       "title": "Advanced: Querying with low tail-latency and low cost - Query caching with Thanos",
       "description": "Learn how to introduce query caching using Query Frontend with Thanos."
