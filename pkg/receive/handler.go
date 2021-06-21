@@ -256,11 +256,7 @@ type replica struct {
 }
 
 func (h *Handler) handleRequest(ctx context.Context, rep uint64, tenant string, wreq *prompb.WriteRequest) error {
-	// The replica value in the header is one-indexed, thus we need >.
-	if rep > h.options.ReplicationFactor {
-		return errBadReplica
-	}
-
+	// We must not forward a request that has already been forwarded to prevent an infinite loop.
 	r := replica{
 		n:          rep,
 		replicated: rep != 0,

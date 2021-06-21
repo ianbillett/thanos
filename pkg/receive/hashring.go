@@ -46,10 +46,8 @@ func (s SingleNodeHashring) Get(tenant string, ts *prompb.TimeSeries) (string, e
 }
 
 // GetN implements the Hashring interface.
-func (s SingleNodeHashring) GetN(_ string, _ *prompb.TimeSeries, n uint64) (string, error) {
-	if n > 0 {
-		return "", &insufficientNodesError{have: 1, want: n + 1}
-	}
+// Since there is only one node in the hashring, we return it for all calls to GetN.
+func (s SingleNodeHashring) GetN(_ string, _ *prompb.TimeSeries, _ uint64) (string, error) {
 	return string(s), nil
 }
 
